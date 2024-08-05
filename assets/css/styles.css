@@ -1,0 +1,162 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 i {
+    color: #007fc8;
+    margin-right: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 5px;
+}
+
+label i {
+    color: #007fc8;
+    margin-right: 5px;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+}
+
+select:focus, textarea:focus {
+    border-color: #007fc8;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007fc8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #005fa3;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    color: #007fc8;
+    margin-top: 20px;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.mensagem-sucesso {
+    color: #007fc8;
+    font-weight: bold;
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.mensagem-erro {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.anonimato-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555555;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anonimato-info i {
+    margin-right: 5px;
+    color: #007fc8;
+}
+
+/* Adicionando regras para evitar o zoom ao focar em campos de formulário */
+input, select, textarea {
+    font-size: 16px; /* Ajuste o tamanho da fonte para um valor que não cause zoom automático */
+}
+
+@viewport {
+    zoom: 1; /* Garantir que o zoom esteja desativado */
+}
+
+@media (max-width: 600px) {
+    /* Ajustes específicos para dispositivos móveis */
+    .container {
+        padding: 15px;
+        width: 100%;
+        max-width: none;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    select, textarea, button {
+        font-size: 16px; /* Ajustar para um tamanho adequado em dispositivos móveis */
+    }
+}
