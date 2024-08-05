@@ -5,6 +5,19 @@ document.getElementById('sugestaoForm').addEventListener('submit', async functio
     const mensagem = document.getElementById('mensagem');
     const loading = document.getElementById('loading');
 
+    // Lista de palavras ofensivas
+    const palavrasOfensivas = ['lixo', 'Horrivel', 'merda', 'Idiota', 'Otario']; // Adicione palavras ofensivas reais aqui
+
+    function contemPalavrasOfensivas(texto) {
+        return palavrasOfensivas.some(palavra => texto.toLowerCase().includes(palavra));
+    }
+
+    if (contemPalavrasOfensivas(sugestao)) {
+        mensagem.textContent = 'Sua mensagem contém palavras inapropriadas. Por favor, revise.';
+        mensagem.classList.add('mensagem-erro');
+        return;
+    }
+
     loading.style.display = 'block';
     mensagem.style.opacity = '0';
     mensagem.classList.remove('mensagem-sucesso', 'mensagem-erro');
@@ -37,3 +50,8 @@ async function enviarSugestao(tipo, sugestao) {
         throw new Error('Erro ao enviar mensagem');
     }
 }
+
+// Adicionando funcionalidade ao botão de limpar
+document.getElementById('resetButton').addEventListener('click', function() {
+    document.getElementById('sugestaoForm').reset();
+});
