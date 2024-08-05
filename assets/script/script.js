@@ -51,7 +51,35 @@ async function enviarSugestao(tipo, sugestao) {
     }
 }
 
-// Adicionando funcionalidade ao botão de limpar
-document.getElementById('resetButton').addEventListener('click', function() {
-    document.getElementById('sugestaoForm').reset();
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    const container = document.querySelector('.container');
+
+    // Verifica a preferência do tema
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        container.classList.add('dark-theme');
+    } else {
+        body.classList.add('light-theme');
+        container.classList.add('light-theme');
+    }
+
+    // Alterna entre temas ao clicar no ícone
+    toggle.addEventListener('click', () => {
+        if (body.classList.contains('light-theme')) {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+            container.classList.remove('light-theme');
+            container.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+            container.classList.remove('dark-theme');
+            container.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+        }
+    });
 });

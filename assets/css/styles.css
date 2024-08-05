@@ -1,12 +1,83 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
+
+/* Estilos para o tema claro */
+body.light-theme {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container.light-theme {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Estilos para o tema escuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container.dark-theme {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* Estilos para o botão de alternância */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #007fc8;
+}
+
+.theme-toggle i {
+    display: none;
+}
+
+.theme-toggle .fa-sun {
+    display: block;
+}
+
+.dark-theme .theme-toggle .fa-sun {
+    display: none;
+}
+
+.dark-theme .theme-toggle .fa-moon {
+    display: block;
+}
+
+/* Estilos para o tema escuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.container.dark-theme {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+h1 {
+    font-size: 28px;
+    color: #333333; /* Cor padrão para o tema claro */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body.dark-theme h1 {
+    color: #ffffff; /* Cor para o tema escuro */
+}
+
 
 .container {
     background-color: #ffffff;
@@ -16,6 +87,7 @@ body {
     width: 100%;
     max-width: 500px;
     box-sizing: border-box; /* Garante que padding e border sejam incluídos no tamanho total */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1 {
